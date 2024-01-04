@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SU Academy</title>
+    <meta
+      name="description"
+      content="Embark on a journey of digital discovery with SU Academy, the revolutionary ed-tech app that empowers learners with essential digital skills for the modern era. Unleash your potential as a student, professional, or digital enthusiast through a diverse array of courses. Explore interactive lessons encompassing coding, digital marketing, graphic design, and more. Benefit from industry experts' insights via video tutorials, hands-on exercises, and real-world projects. With an intuitive interface, personalized learning pathways, and progress monitoring, SU Academy offers an unparalleled learning expedition. Embrace the digital revolution – broaden your horizons, gain invaluable skills, and open doors to new opportunities. Experience it today by downloading the app!"
+    />
+    <meta
+      name="keywords"
+      content="SU Academy, ed-tech app, digital skills, online learning, coding, digital marketing, graphic design, interactive lessons, industry experts, video tutorials, practical exercises, personalized learning, progress tracking, digital revolution, empower learners, modern world, education, knowledge."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./Resourses/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <style>
+      .no-scroll-bar::-webkit-scrollbar {
+        width: 0;
+        margin: 0;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/ddf7c8821d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            xs: "475px",
+            "xs-2": "520px",
+            sm: "640px",
+            md: "768px",
+            lg: "1060px",
+            xl: "1280px",
+            "2xl": "1536px",
+          },
+          extend: {
+            screens: {
+              "xs-2": "520px",
+            },
+            colors: {
+              primary: "#0055ff",
+            },
+            backgroundImage: {
+              "white-bottom": "url(./Resourses/banner-bg-shape-1.svg)",
+              "rounded-bg": "url(./Resourses/offer-badge-bg-color.svg)",
+              "dot-bg": "url(./Resourses/dots.png)",
+              quote: "url(./Resourses/quote.svg)",
+            },
+            container: {
+              screens: {
+                md: "750px",
+                lg: "1050px",
+                xl: "1300px",
+              },
+            },
+            keyframes: {
+              testScroll: {
+                "0%": { transform: "translateX(108px)" },
+                "100%": { transform: "translateX(-108px)" },
+              },
+              pulse: {
+                "0%": {
+                  transform: "scale(1, 1)",
+                },
+                "25%": {
+                  transform: "scale(1, 1)",
+                },
+                "50%": {
+                  transform: "scale(1.2, 1.2)",
+                },
+                "100%": {
+                  transform: "scale(1, 1)",
+                },
+              },
+              slowleft: {
+                "0%": {
+                  transform: "translateX(0px)",
+                },
+                "100%": {
+                  transform: "translateX(-1600px)",
+                },
+              },
+              slowright: {
+                "0%": {
+                  transform: "translateX(-1600px)",
+                },
+                "100%": {
+                  transform: "translateX(0px)",
+                },
+              },
+            },
+            animation: {
+              testScroll: "testScroll 2.5s linear infinite",
+              pulse: "pulse 2s ease infinite",
+              slowleft: "slowleft 30s linear infinite",
+              slowright: "slowright 30s linear infinite",
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+    <style>
+        html{
+        scroll-behavior: smooth;
+      }
+      .radial-gradient::before {
+        background-image: radial-gradient(
+          ellipse at center,
+          #2f57ef 0,
+          rgba(255, 255, 255, 0) 70%
+        );
+        content: "";
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 8px;
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <div
+      id="hiddenDiv"
+      class="fixed bg-[rgba(0,0,0,0.9)] w-screen h-screen z-[9999] top-0 left-0 flex items-center justify-center"
+      style="display: none"
+    >
+      <div class="h-[90%] w-[90%] flex items-center justify-center">
+        <img class="h-full" src="./Resourses/opening.png" alt="" />
+        <i
+          id="close-btn"
+          class="uis uis-times-circle absolute top-1 md:top-10 md:right-10 right-5 text-[#007affbf] hover:text-primary text-4xl cursor-pointer"
+        ></i>
+      </div>
+    </div>
+
+    <section class="bg-[rgba(38,38,38)] py-4">
+      <div
+        class="container mx-auto flex-row gap-y-2 flex items-center justify-between text-[rgba(255,255,255,0.5)]"
+      >
+        <div class="hidden md:flex text-sm items-center justify-center gap-x-3">
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-instagram-alt"></i></span
+            ><span>100k Followers</span></a
+          >
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-facebook"></i></span
+            ><span>500k Followers</span></a
+          >
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-phone-volume"></i></span
+            ><span>+91 1234567890</span></a
+          >
+        </div>
+        <div class="flex items-center justify-center gap-x-1">
+          <span
+            class="py-1 px-3 text-sm font-medium rounded-full bg-primary text-white"
+            >Hot</span
+          >
+          <img class="w-[20px]" src="Resourses/hand-emojji.svg" alt="" />
+          <p class="font-medium text-sm">
+            Intro price. Get SU Academy for Big Sale -95% off.
+          </p>
+        </div>
+        <div class="lg:flex items-center hidden justify-center gap-x-3 text-sm">
+          <div class="flex items-center justify-center">
+            <i
+              class="uil uil-facebook-f px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-instagram px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-twitter-alt px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-linkedin px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+          </div>
+          <div class="flex items-center justify-center gap-x-1">
+            <span><img src="Resourses/en-us.png" alt="" /></span>
+            <span>English</span>
+            <span><i class="uil uil-angle-down"></i></span>
+          </div>
+          <div class="flex items-center justify-center">
+            <span>USD</span>
+            <span><i class="uil uil-angle-down"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav
+      class="px-4 py-4 bg-white transition-all z-[100] duration-300 shadow-md w-full"
+    >
+      <div class="flex container mx-auto items-center justify-between">
+        <div>
+          <a href="#"
+            ><img class="w-[150px]" src="Resourses/logo2.png" alt="logo2"
+          /></a>
+        </div>
+        <div
+          class="hidden lg:flex items-center justify-center gap-x-8 text-base font-medium"
+        >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./index.html"
+            >Home</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./Course.html"
+            >Courses</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="#"
+            >Blog</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./AboutUs.html"
+            >About Us</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./Collaboration.html"
+            >Collaboration</a
+          >
+          <a class="hover:text-primary duration-300 transition-all" href="#"
+            >Marketplace</a
+          >
+        </div>
+        <div class="flex gap-x-3 items-center justify-center">
+          <a
+            href="#"
+            class="border-l px-4 font-medium gap-x-3 flex"
+          >
+            <span><i class="uil uil-user text-xl md:text-base"></i></span>
+            <span class="lg:flex hidden">Admin</span>
+          </a>
+          <a
+            href="#"
+            class="lg:flex hidden border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500"
+          >
+            <div
+              class="m-1 px-6 py-3 bg-white rounded-full relative overflow-hidden"
+            >
+              <span class="block animate-testScroll">Enroll Now</span>
+            </div>
+          </a>
+          <div class="lg:hidden flex">
+            <i class="uil uil-list-ui-alt text-3xl"></i>
+          </div>
+        </div>
+      </div>
+      <aside
+        class="fixed z-50 top-0 left-0 w-0 overflow-hidden transition-all duration-300 h-full bg-[rgba(0,0,0,.3)]"
+      >
+        <div
+          class="max-w-[400px] bg-white w-full h-full py-8 px-5 overflow-y-scroll no-scroll-bar"
+        >
+          <div class="flex items-center justify-between mb-8">
+            <a
+              href="#"
+              ><img class="w-[150px]" src="Resourses/logo2.png" alt="logo2"
+            /></a>
+            <i
+              class="uil uil-multiply text-xl px-2 text-white py-1 bg-primary rounded-full cursor-pointer"
+            ></i>
+          </div>
+          <div class="mb-8">
+            <p class="text-black font-medium">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
+              explicabo, eius in magni architecto iure.
+            </p>
+          </div>
+          <div class="flex flex-col gap-y-2 pb-3 mb-4 border-b-2">
+            <a
+              class="flex gap-x-3 items-center"
+              href="#"
+              ><span><i class="uil uil-envelope"></i></span
+              ><span>example@example.com</span></a
+            >
+            <a
+              class="flex gap-x-3 items-center"
+              href="#"
+              ><span><i class="uil uil-phone-volume"></i></span
+              ><span>+91 1234567890</span></a
+            >
+          </div>
+          <div class="flex flex-col mb-3">
+            <a class="border-b-2 py-4 text-lg font-medium" href="./index.html"
+              >Home</a
+            >
+            <a class="border-b-2 py-4 text-lg font-medium" href="./Course.html"
+              >Courses</a
+            >
+            <a
+              class="border-b-2 py-4 text-lg font-medium"
+              href="#"
+              >Blog</a
+            >
+            <a class="py-4 border-b-2 text-lg font-medium" href="./AboutUs.html"
+              >About Us</a
+            >
+            <a
+              class="py-4 border-b-2 text-lg font-medium"
+              href="./Collaboration.html"
+              >Collaboration</a
+            >
+            <a class="py-4 text-lg font-medium" href="#">Marketplace</a>
+          </div>
+          <div class="mb-4">
+            <a
+              href="#"
+              class="md:flex hidden border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500 shadow-xl"
+            >
+              <div
+                class="m-1 px-6 py-3 w-full bg-white rounded-full relative overflow-hidden text-center font-medium"
+              >
+                Enroll Now
+              </div>
+            </a>
+          </div>
+          <div>
+            <h1 class="text-sm border-b-2 uppercase font-medium py-4">
+              find with us
+            </h1>
+          </div>
+          <div class="py-6 flex items-center gap-x-4">
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-facebook-f"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-instagram"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-twitter-alt"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-linkedin-alt"></i
+            ></a>
+          </div>
+        </div>
+      </aside>
+    </nav>
+
+    <div
+      class="relative mx-auto px-4 pt-16 sm:max-w-xl md:max-w-full md:px-8 lg:py-32 xl:px-20"
+    >
+      <div class="mx-auto max-w-xl lg:max-w-screen-xl">
+        <div class="mb-16 text-center lg:mb-0 lg:max-w-lg lg:text-left">
+          <div class="mb-6 max-w-xl">
+            <div>
+              <p
+                class="mb-4 inline-block rounded-full bg-[rgb(0,85,255)] px-3 py-px text-sm font-semibold tracking-wider text-white"
+              >
+                Learning Platform
+              </p>
+            </div>
+            <h2
+              class="mb-6 max-w-lg mx-auto font-sans text-3xl font-bold tracking-tight text-slate-700 sm:text-4xl sm:leading-snug"
+            >
+            SU Academy Collaboration
+            For
+              <span class="inline-block text-[rgb(0,85,255)]"
+                >Institutes & School/Universities</span
+              >
+            </h2>
+            <p class="text-base text-gray-700 md:text-lg">
+                Collaboration improves the way your team works together and problem solves. This leads to more innovation, efficient processes, increased success, and improved communication
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start"
+          >
+            <a
+              href="#"
+              class="inline-flex h-12 w-full items-center justify-center rounded-full bg-[rgb(0,85,255)] px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-[rgba(0,85,255,0.6)] focus:ring sm:w-auto"
+            >
+              Start a free Trial
+            </a>
+            <a
+              href="#"
+              class="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-[rgb(0,85,255)] px-4 font-semibold text-[rgb(0,85,255)] transition-colors duration-200 hover:border-y-primary hover:text-[rgba(0,85,255,0.6)] sm:w-auto"
+              >Watch a demo video</a
+            >
+          </div>
+
+          <div class="mt-6 flex justify-center -space-x-4 lg:justify-start">
+            <img
+              class="h-12 w-12 rounded-full ring ring-white"
+              src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            />
+            <img
+              class="h-12 w-12 rounded-full ring ring-white"
+              src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            />
+            <img
+              class="h-12 w-12 rounded-full ring ring-white"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+            />
+            <div class="">
+              <span class="pl-8 font-semibold">Customer Reviews</span>
+              <div
+                class="flex w-auto items-center justify-center space-x-1 pl-8"
+              >
+                <svg
+                  class="h-auto w-5 fill-current text-yellow-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                >
+                  <path
+                    d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"
+                  />
+                </svg>
+                <span class="text-sm font-medium text-slate-400">
+                  4.9 •
+                  <a href="#" class="text-sm font-normal underline"
+                    >129 reviews</a
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hidden h-full justify-center overflow-hidden lg:absolute lg:bottom-0 lg:right-0 lg:flex lg:w-1/2 lg:items-end lg:justify-start"
+        >
+          <svg
+            class="h-full w-full"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern id="img1" x="0" y="0" width="1" height="1">
+                <image
+                  x="0"
+                  y="0"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="xMaxYMax slice"
+                  href="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y291cnNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                />
+              </pattern>
+            </defs>
+
+            <path
+              fill="url(#img1)"
+              d="M40,-62.6C52.2,-54.5,62.5,-43.9,66.9,-31.4C71.3,-18.9,69.6,-4.6,65.9,8.3C62.2,21.1,56.4,32.5,49.2,45.2C42.1,57.9,33.7,72.1,22.2,75.3C10.7,78.5,-3.9,70.7,-14.8,62.1C-25.7,53.5,-32.8,44.1,-44.9,35.8C-57,27.5,-74,20.3,-82.1,7.7C-90.3,-4.8,-89.5,-22.7,-80.8,-34.8C-72,-46.9,-55.2,-53.3,-40.4,-60.2C-25.6,-67,-12.8,-74.3,0.6,-75.2C13.9,-76.1,27.9,-70.6,40,-62.6Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-[80px] px-4 md:px-0 bg-gray-100 flex items-center justify-center">
+      <div class="container mx-auto">
+        <div>
+          <h2 class="font-semibold text-xl text-gray-600">Collaboration Form</h2>
+          <p class="text-gray-500 mb-6">
+            Send a mail to us and wait for a call back.
+          </p>
+
+          <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+              <div class="text-gray-600 flex flex-col items-center justify-center gap-y-2">
+                <img src="./Resourses/about-08.jpg" class="w-full object-top object-cover h-[300px] block" alt="">
+                <a href="#" class="py-3 px-3 w-full block bg-[rgb(47,87,239)] hover:px-6 transition-all duration-300 text-white font-medium">Download PDF</a>
+              </div>
+
+              <div class="lg:col-span-2">
+                <div
+                  class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5"
+                >
+                  <div class="md:col-span-5">
+                    <label for="full_name">Full Name</label>
+                    <input
+                      type="text"
+                      name="full_name"
+                      id="full_name"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      value=""
+                    />
+                  </div>
+
+                  <div class="md:col-span-5">
+                    <label for="email">Email Address</label>
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      value=""
+                      placeholder="email@domain.com"
+                    />
+                  </div>
+
+                  <div class="md:col-span-3">
+                    <label for="address">Address / Street</label>
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      value=""
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="md:col-span-2">
+                    <label for="city">City</label>
+                    <input
+                      type="text"
+                      name="city"
+                      id="city"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      value=""
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="md:col-span-2">
+                    <label for="country">Country / region</label>
+                    <div
+                      class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+                    >
+                      <input
+                        name="country"
+                        id="country"
+                        placeholder="Country"
+                        class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        value=""
+                      />
+                      <button
+                        tabindex="-1"
+                        class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
+                      >
+                        <svg
+                          class="w-4 h-4 mx-2 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </button>
+                      <button
+                        tabindex="-1"
+                        for="show_more"
+                        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
+                      >
+                        <svg
+                          class="w-4 h-4 mx-2 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-2">
+                    <label for="state">State / province</label>
+                    <div
+                      class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1"
+                    >
+                      <input
+                        name="state"
+                        id="state"
+                        placeholder="State"
+                        class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"
+                        value=""
+                      />
+                      <button
+                        tabindex="-1"
+                        class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-red-600"
+                      >
+                        <svg
+                          class="w-4 h-4 mx-2 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </button>
+                      <button
+                        tabindex="-1"
+                        for="show_more"
+                        class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-blue-600"
+                      >
+                        <svg
+                          class="w-4 h-4 mx-2 fill-current"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-1">
+                    <label for="zipcode">Zipcode</label>
+                    <input
+                      type="text"
+                      name="zipcode"
+                      id="zipcode"
+                      class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      placeholder=""
+                      value=""
+                    />
+                  </div>
+
+                  <div class="md:col-span-5 text-right">
+                    <div class="inline-flex items-end">
+                      <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-[80px] px-4 md:px-0">
+      <div class="flex flex-col justify-center items-center">
+        <p
+          class="uppercase px-6 py-1 rounded-full bg-[#2f57ef21] text-[#2f57ef] text-sm font-medium mb-10"
+        >
+          EDUCATION FOR EVERYONE
+        </p>
+        <h1
+          class="text-2xl md:text-3xl md:text-5xl text-center font-bold mb-16"
+        >
+          People like histudy education.<br />
+          No joking - here’s the proof!
+        </h1>
+
+        <div class="overflow-hidden w-full mb-6">
+          <div
+            class="flex gap-x-6 items-center justify-between animate-slowleft py-4"
+          >
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden w-full mb-6">
+          <div
+            class="flex gap-x-6 items-center justify-between animate-slowright py-4"
+          >
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-white md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-black">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-[rgba(0,0,0,.5)]"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-black font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:min-w-[500px] max-w-[500px] min-w-full px-[15px]">
+              <div class="relative z-10 rounded-lg overflow-hidden shadow-md">
+                <div
+                  class="shadow-lg py-[22px] px-[19px] text-center bg-gradient-to-tr from-[#2f57ef] to-[#b966e7] md:py-[30px] md:px-[40px] lg:py-[40px] lg:px-[20px] xl:px-[30px] 2xl:px-[40px] 2xl:py-[50px] before:absolute before:content-[''] before:right-[40px] before:top-[40px] before:bg-no-repeat before:w-[52px] before:h-[44px] before:bg-quote"
+                >
+                  <div class="flex items-center justify-center">
+                    <img
+                      src="./Resourses/facebook.png"
+                      class="max-h-[50px] max-w-full"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mt-[20px]">
+                    <p class="text-white">
+                      After the launch, vulputate at sapien sit amet, auctor
+                      iaculis lorem. In vel hend rerit nisi. Vestibulum eget
+                      risus velit.
+                    </p>
+                    <div class="flex items-center mt-[22px] justify-center">
+                      <div
+                        class="h-[40px] min-w-[40px] inline-block bg-white rounded-full overflow-hidden border-2 border-white"
+                      >
+                        <img
+                          src="./Resourses/client-01.png"
+                          class="h-full w-full object-cover rounded-full"
+                          alt=""
+                        />
+                      </div>
+                      <p class="pl-[15px] text-white font-medium text-[16px]">
+                        Martha Maldonado, CEO
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-[90px] px-4 md:px-0 z-10 bg-[#2f57ef] relative after:absolute z-20 after:-z-10 after:w-full after:h-full after:content-[''] after:right-0 after:top-0 after:bg-dot-bg after:bg-repeat after:bg-center"
+    >
+      <div
+        class="container px-4 mx-auto px-0 flex flex-col items-center justify-center"
+      >
+        <p
+          class="px-4 py-2 text-sm font-medium text-white bg-[rgba(255,255,255,0.3)] rounded-full"
+        >
+          GET LATEST SU Academy UPDATE
+        </p>
+        <h1 class="md:text-5xl text-4xl font-bold py-5 text-white text-center">
+          Subscribe Our Newsletter
+        </h1>
+        <p
+          class="max-w-[650px] w-full text-center text-white md:text-lg text-base"
+        >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+          explicabo sit est eos earum reprehenderit inventore nam autem corrupti
+          rerum!
+        </p>
+        <div
+          class="my-5 bg-white py-2 px-2 rounded-md max-w-[550px] w-full flex justify-between"
+        >
+          <input
+            type="email"
+            class="pl-5 outline-none border-none w-[100%]"
+            placeholder="Enter Your E-mail"
+          />
+          <a
+            href="#"
+            class="py-3 text-white hover:bg-white font-medium hover:text-primary hover:shadow-md transition-all duration-300 flex px-4 rounded-md bg-primary"
+          >
+            <span>Subscribe</span>
+            <span><i class="uil uil-arrow-right"></i></span>
+          </a>
+        </div>
+        <p class="text-white text-xs pb-6">No ads, No trails, No commitments</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center">
+          <div
+            class="flex flex-col items-center justify-center text-white p-[30px] border-b sm:border-r sm:border-b-0 border-[rgba(255,255,255,0.3)]"
+          >
+            <div
+              class="flex items-center justify-center text-5xl font-bold mb-3"
+            >
+              <h1 class="auto-count" data-val="500">000</h1>
+              <span class="font-normal">+</span>
+            </div>
+            <p class="text-lg font-semibold">Successfully Trained</p>
+            <p class="text-lg">Learners & counting</p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center text-white p-[30px]"
+          >
+            <div
+              class="flex items-center justify-center text-5xl font-bold mb-3"
+            >
+              <h1 class="auto-count" data-val="100">000</h1>
+              <span class="font-normal">+</span>
+            </div>
+            <p class="text-lg font-semibold">Certification Students</p>
+            <p class="text-lg">Online Course</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-[80px] mx-4 md:mx-0">
+      <div class="container mx-auto">
+        <div
+          class="grid lg:grid-cols-[2fr,1fr,1fr,1fr] sm:grid-cols-[1fr,1fr] lg:gap-x-2 sm:gap-y-3 gap-y-8 gap-x-5 grid-cols-1 py-10"
+        >
+          <div class="max-w-[400px]">
+            <div>
+              <img class="w-[210px]" src="./Resourses/logo2.png" alt="" />
+            </div>
+            <p class="py-4">
+              We’re always in search for talented and motivated people. Don’t be
+              shy introduce yourself!
+            </p>
+            <div class="max-w-[200px]">
+              <a
+                href="#"
+                class="flex border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500 shadow-xl"
+              >
+                <div
+                  class="m-1 px-6 py-3 w-full bg-white rounded-full relative overflow-hidden text-center font-medium"
+                >
+                  Contact Us
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Useful Links</h1>
+            <div class="flex flex-col">
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Marketplace</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >kindergarten</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >University</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >GYM Coaching</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >FAQ</a
+              >
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Our Company</h1>
+            <div class="flex flex-col">
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Become Teacher</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Blog</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Instructor</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >GYM Events</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Get Contact</h1>
+            <div class="flex flex-col">
+              <div class="my-2">
+                <span>Phone: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >(406) 555-0120</a
+                >
+              </div>
+              <div class="my-2">
+                <span>E-mail: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >rainbow@example.com</a
+                >
+              </div>
+              <div class="my-2">
+                <span>Location: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >North America, USA</a
+                >
+              </div>
+              <div class="my-2 flex gap-x-2">
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-twitter"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t py-4 flex items-center justify-between flex-col gap-y-3 md:flex-row"
+        >
+          <div>
+            Copyright © <span id="year"></span> Example. All Rights Reserved
+          </div>
+          <div class="flex flex-wrap justify-center">
+            <span class="px-3"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Terms of service</a
+              ></span
+            >
+            <span class="px-3 border-l border-r"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Privacy policy</a
+              ></span
+            >
+            <span class="px-3 border-l border-r"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Subscription</a
+              ></span
+            >
+            <span class="px-3"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Login & Register</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./Js/app.js"></script>
+  </body>
+</html>

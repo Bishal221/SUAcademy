@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SU Academy</title>
+    <meta
+      name="description"
+      content="Embark on a journey of digital discovery with SU Academy, the revolutionary ed-tech app that empowers learners with essential digital skills for the modern era. Unleash your potential as a student, professional, or digital enthusiast through a diverse array of courses. Explore interactive lessons encompassing coding, digital marketing, graphic design, and more. Benefit from industry experts' insights via video tutorials, hands-on exercises, and real-world projects. With an intuitive interface, personalized learning pathways, and progress monitoring, SU Academy offers an unparalleled learning expedition. Embrace the digital revolution – broaden your horizons, gain invaluable skills, and open doors to new opportunities. Experience it today by downloading the app!"
+    />
+    <meta
+      name="keywords"
+      content="SU Academy, ed-tech app, digital skills, online learning, coding, digital marketing, graphic design, interactive lessons, industry experts, video tutorials, practical exercises, personalized learning, progress tracking, digital revolution, empower learners, modern world, education, knowledge."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./Resourses/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <style>
+      .no-scroll-bar::-webkit-scrollbar {
+        width: 0;
+        margin: 0;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/ddf7c8821d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            "xs": "475px",
+            "xs-2": "520px",
+            "sm": "640px",
+            "md": "768px",
+            "lg": "1060px",
+            "xl": "1280px",
+            "2xl": "1536px",
+          },
+          extend: {
+            screens: {
+              "xs-2": "520px",
+            },
+            colors: {
+              primary: "#0055ff",
+            },
+            backgroundImage: {
+              "white-bottom": "url(./Resourses/banner-bg-shape-1.svg)",
+              "rounded-bg": "url(./Resourses/offer-badge-bg-color.svg)",
+              "dot-bg": "url(./Resourses/dots.png)",
+              quote: "url(./Resourses/quote.svg)",
+            },
+            container: {
+              screens: {
+                md: "750px",
+                lg: "1050px",
+                xl: "1300px",
+              },
+            },
+            keyframes: {
+              testScroll: {
+                "0%": { transform: "translateX(108px)" },
+                "100%": { transform: "translateX(-108px)" },
+              },
+              pulse: {
+                "0%": {
+                  transform: "scale(1, 1)",
+                },
+                "25%": {
+                  transform: "scale(1, 1)",
+                },
+                "50%": {
+                  transform: "scale(1.2, 1.2)",
+                },
+                "100%": {
+                  transform: "scale(1, 1)",
+                },
+              },
+              slowleft: {
+                "0%": {
+                  transform: "translateX(0px)",
+                },
+                "100%": {
+                  transform: "translateX(-1600px)",
+                },
+              },
+              slowright: {
+                "0%": {
+                  transform: "translateX(-1600px)",
+                },
+                "100%": {
+                  transform: "translateX(0px)",
+                },
+              },
+            },
+            animation: {
+              testScroll: "testScroll 2.5s linear infinite",
+              pulse: "pulse 2s ease infinite",
+              slowleft: "slowleft 30s linear infinite",
+              slowright: "slowright 30s linear infinite",
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      .radial-gradient::before {
+        background-image: radial-gradient(
+          ellipse at center,
+          #2f57ef 0,
+          rgba(255, 255, 255, 0) 70%
+        );
+        content: "";
+        width: 100%;
+        height: 4px;
+        left: 0;
+        top: 8px;
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <div
+      id="hiddenDiv"
+      class="fixed bg-[rgba(0,0,0,0.9)] w-screen h-screen z-[9999] top-0 left-0 flex items-center justify-center"
+      style="display: none"
+    >
+      <div class="h-[90%] w-[90%] flex items-center justify-center">
+        <img class="h-full" src="./Resourses/opening.png" alt="" />
+        <i
+          id="close-btn"
+          class="uis uis-times-circle absolute top-1 md:top-10 md:right-10 right-5 text-[#007affbf] hover:text-primary text-4xl cursor-pointer"
+        ></i>
+      </div>
+    </div>
+
+    <section class="bg-[rgba(38,38,38)] py-4">
+      <div
+        class="container mx-auto flex-row gap-y-2 flex items-center justify-between text-[rgba(255,255,255,0.5)]"
+      >
+        <div class="hidden md:flex text-sm items-center justify-center gap-x-3">
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-instagram-alt"></i></span
+            ><span>100k Followers</span></a
+          >
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-facebook"></i></span
+            ><span>500k Followers</span></a
+          >
+          <a
+            class="flex gap-x-1 transition-all duration-300 hover:text-white"
+            href="#"
+            ><span><i class="uil uil-phone-volume"></i></span
+            ><span>+91 1234567890</span></a
+          >
+        </div>
+        <div class="flex items-center justify-center gap-x-1">
+          <span
+            class="py-1 px-3 text-sm font-medium rounded-full bg-primary text-white"
+            >Hot</span
+          >
+          <img class="w-[20px]" src="Resourses/hand-emojji.svg" alt="" />
+          <p class="font-medium text-sm">
+            Intro price. Get SU Academy for Big Sale -95% off.
+          </p>
+        </div>
+        <div class="lg:flex items-center hidden justify-center gap-x-3 text-sm">
+          <div class="flex items-center justify-center">
+            <i
+              class="uil uil-facebook-f px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-instagram px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-twitter-alt px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+            <i
+              class="uil uil-linkedin px-2 rounded-full transition-all duration-300 py-1 hover:bg-[rgba(255,255,255,0.2)] hover:text-white"
+            ></i>
+          </div>
+          <div class="flex items-center justify-center gap-x-1">
+            <span><img src="Resourses/en-us.png" alt="" /></span>
+            <span>English</span>
+            <span><i class="uil uil-angle-down"></i></span>
+          </div>
+          <div class="flex items-center justify-center">
+            <span>USD</span>
+            <span><i class="uil uil-angle-down"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav
+      class="px-4 py-4 bg-white transition-all z-[100] duration-300 shadow-md w-full"
+    >
+      <div class="flex container mx-auto items-center justify-between">
+        <div>
+          <a href="#"
+            ><img class="w-[150px]" src="Resourses/logo2.png" alt="logo2"
+          /></a>
+        </div>
+        <div
+          class="hidden lg:flex items-center justify-center gap-x-8 text-base font-medium"
+        >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./index.html"
+            >Home</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./Course.html"
+            >Courses</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="#"
+            >Blog</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./AboutUs.html"
+            >About Us</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="./Collaboration.html"
+            >Collaboration</a
+          >
+          <a
+            class="hover:text-primary duration-300 transition-all"
+            href="#"
+            >Marketplace</a
+          >
+        </div>
+        <div class="flex gap-x-3 items-center justify-center">
+          <a
+            href="#"
+            class="border-l px-4 font-medium gap-x-3 flex"
+          >
+            <span><i class="uil uil-user text-xl md:text-base"></i></span>
+            <span class="lg:flex hidden">Admin</span>
+          </a>
+          <a
+            href="#"
+            class="lg:flex hidden border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500"
+          >
+            <div
+              class="m-1 px-6 py-3 bg-white rounded-full relative overflow-hidden"
+            >
+              <span class="block animate-testScroll">Enroll Now</span>
+            </div>
+          </a>
+          <div class="lg:hidden flex">
+            <i class="uil uil-list-ui-alt text-3xl"></i>
+          </div>
+        </div>
+      </div>
+      <aside
+        class="fixed z-50 top-0 left-0 w-0 overflow-hidden transition-all duration-300 h-full bg-[rgba(0,0,0,.3)]"
+      >
+        <div
+          class="max-w-[400px] bg-white w-full h-full py-8 px-5 overflow-y-scroll no-scroll-bar"
+        >
+          <div class="flex items-center justify-between mb-8">
+            <a
+              href="#"
+              ><img class="w-[150px]" src="Resourses/logo2.png" alt="logo2"
+            /></a>
+            <i
+              class="uil uil-multiply text-xl px-2 text-white py-1 bg-primary rounded-full cursor-pointer"
+            ></i>
+          </div>
+          <div class="mb-8">
+            <p class="text-black font-medium">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
+              explicabo, eius in magni architecto iure.
+            </p>
+          </div>
+          <div class="flex flex-col gap-y-2 pb-3 mb-4 border-b-2">
+            <a
+              class="flex gap-x-3 items-center"
+              href="#"
+              ><span><i class="uil uil-envelope"></i></span
+              ><span>example@example.com</span></a
+            >
+            <a
+              class="flex gap-x-3 items-center"
+              href="#"
+              ><span><i class="uil uil-phone-volume"></i></span
+              ><span>+91 1234567890</span></a
+            >
+          </div>
+          <div class="flex flex-col mb-3">
+            <a
+              class="border-b-2 py-4 text-lg font-medium"
+              href="./index.html"
+              >Home</a
+            >
+            <a
+              class="border-b-2 py-4 text-lg font-medium"
+              href="./Course.html"
+              >Courses</a
+            >
+            <a
+              class="border-b-2 py-4 text-lg font-medium"
+              href="#"
+              >Blog</a
+            >
+            <a
+              class="py-4 border-b-2 text-lg font-medium"
+              href="./AboutUs.html"
+              >About Us</a
+            >
+            <a
+              class="py-4 border-b-2 text-lg font-medium"
+              href="./Collaboration.html"
+              >Collaboration</a
+            >
+            <a
+              class="py-4 text-lg font-medium"
+              href="#"
+              >Marketplace</a
+            >
+          </div>
+          <div class="mb-4">
+            <a
+              href="#"
+              class="md:flex hidden border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500 shadow-xl"
+            >
+              <div
+                class="m-1 px-6 py-3 w-full bg-white rounded-full relative overflow-hidden text-center font-medium"
+              >
+                Enroll Now
+              </div>
+            </a>
+          </div>
+          <div>
+            <h1 class="text-sm border-b-2 uppercase font-medium py-4">
+              find with us
+            </h1>
+          </div>
+          <div class="py-6 flex items-center gap-x-4">
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-facebook-f"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-instagram"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-twitter-alt"></i
+            ></a>
+            <a
+              class="px-3 text-xl py-[10px] border-2 rounded-full"
+              href="#"
+              ><i class="uil uil-linkedin-alt"></i
+            ></a>
+          </div>
+        </div>
+      </aside>
+    </nav>
+
+    <section class="h-[580px] relative w-full px-4 md:px-0">
+      <div
+        class="bg-gradient-to-r from-[#b966e7] to-[#2f57ef] block absolute top-0 left-0 bottom-0 h-full w-full -z-[4] after:bg-gradient-to-r after:from-white after:to-[rgba(255, 255, 255, 0.1)] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:content-[''] after:-z-[1]"
+      ></div>
+      <div class="container mx-auto">
+        <div class="w-full pt-[100px]">
+          <p class="font-medium mb-6">
+            <a
+              class="relative transition-all duration-300 after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#2f57ef] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+              href="./index.html"
+              >Home</a
+            >
+            <i class="uil uil-angle-right-b"></i>
+            <span class="text-[rgba(0,0,0,.3)]">Courses</span>
+          </p>
+          <div class="flex items-start gap-y-4 sm:items-center gap-x-4 mb-4 flex-col sm:flex-row">
+            <h1 class="text-5xl font-bold">Courses</h1>
+            <a
+              class="block group rounded-full px-6 py-4 border-2 bg-[#e2d5fccc] shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-between gap-x-1"
+              href="#"
+              ><span>🎉</span
+              ><span
+                class="group-hover:text-primary font-medium transition-all duration-300"
+                >50 Courses</span
+              ></a
+            >
+          </div>
+          <p class="font-medium text-lg">
+            Courses that help beginner designers become true unicorns.
+          </p>
+        </div>
+        <div class="mt-8 w-full">
+          <div class="flex justify-between py-1 flex-col gap-y-3 sm:flex-row items-start sm:items-center w-full mb-8">
+            <p>Showing 1-9 of 19 results</p>
+            <div class="flex items-center justify-between gap-x-3">
+              <div
+                class="flex items-center py-1 rounded-full border-2 border-white shadow-lg"
+              >
+                <input
+                  class="mx-6 block bg-transparent outline-none border-none text-white placeholder-white"
+                  placeholder="Search Your Courses.."
+                  type="text"
+                />
+                <span
+                  class="text-white bg-transparent cursor-pointer transition-all duration-300 hover:shadow-lg hover:text-primary block rounded-full py-2 mr-1 hover:bg-white px-3"
+                  ><i class="uil uil-search"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 md:px-4 sm:-translate-y-[180px] -translate-y-[100px]">
+      <div class="container flex-wrap mx-auto gap-x-3 gap-y-6 flex justify-center items-center">
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="w-full sm:w-[48%] lg:w-[32%] border rounded-lg p-[30px] bg-white shadow-lg hover:-translate-y-[10px] duration-300 transition-all">
+          <div class="relative group">
+            <img
+              src="./Resourses/classic-lms-01.jpg"
+              class="rounded-lg mb-[15px]"
+              alt=""
+            />
+            <div
+              class="absolute bg-[rgba(128,128,128,0.6)] transition-all duration-300 group-hover:opacity-100 opacity-0 h-full w-full left-0 top-0 flex items-center justify-center"
+            >
+              <a
+                class="flex block items-center justify-center gap-x-3 font-semibold py-4 px-4 rounded-md bg-primary"
+                href="#"
+              >
+                <span class="block transition-all text-white">Read More</span>
+                <span
+                  class="block text-white duration-300"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <h1
+              class="text-2xl font-bold capitalize cursor-pointer hover:text-primary transition-all duration-300"
+            >
+              Difficult things about education.
+            </h1>
+            <p><i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto flex items-center justify-center py-[60px] gap-x-4">
+        <div class="text-lg hover:bg-primary transition-all duration-300 hover:text-white w-[50px] flex items-center justify-center font-medium rounded-md shadow-2xl h-[50px] cursor-pointer"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="text-lg hover:bg-primary transition-all duration-300 hover:text-white w-[50px] flex items-center justify-center font-medium rounded-md shadow-2xl h-[50px] cursor-pointer">1</div>
+        <div class="text-lg hover:bg-primary transition-all duration-300 hover:text-white w-[50px] flex items-center justify-center font-medium rounded-md shadow-2xl bg-primary text-white h-[50px] cursor-pointer">2</div>
+        <div class="text-lg hover:bg-primary transition-all duration-300 hover:text-white w-[50px] flex items-center justify-center font-medium rounded-md shadow-2xl h-[50px] cursor-pointer">3</div>
+        <div class="text-lg hover:bg-primary transition-all duration-300 hover:text-white w-[50px] flex items-center justify-center font-medium rounded-md shadow-2xl h-[50px] cursor-pointer"><i class="fa-solid fa-angle-right"></i></div>
+      </div>
+    </section>
+
+    <section class="px-4 md:px-0 bg-gradient-to-r from-[rgba(255,255,255,0.15)] via-[rgba(251,199,226,0.15)] to-[rgba(220,217,254,0.15)]">
+      <div class="container mx-auto flex items-center justify-between h-full">
+        <div class="w-[20%] hidden xl:block relative">
+          <img src="./Resourses/cta.png" class="absolute -bottom-[140px] left-0" alt="">
+        </div>
+        <div class="w-full xl:w-[80%] flex items-center flex-col xl:items-start xl:pl-[60px] py-[50px]">
+          <h1 class="text-3xl sm:text-4xl xl:text-5xl text-center xl:text-left font-bold leading-[1.1]">Ready to start creating a Educational Website?</h1>
+          <a
+          class="px-4 py-4 rounded-md text-lg hover:bg-gradient-to-r hover:from-blue-500 transition-all duration-300 hover:to-purple-500 text-white bg-gradient-to-r overflow-hidden from-purple-500 to-blue-500 mt-5 w-fit flex group"
+          href="#"
+          ><span
+            class="block group-hover:translate-x-[5px] group-hover:opacity-100 opacity-0 -translate-x-[35px] transition-all duration-300"
+            ><i class="fa-solid fa-arrow-right"></i></span
+          ><span
+            class="block -translate-x-[10px] group-hover:translate-x-[15px] transition-all duration-300"
+            >Purchase Courses</span
+          ><span
+            class="block transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-[35px]"
+            ><i class="fa-solid fa-arrow-right"></i></span
+        ></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-[80px] mx-4 md:mx-0">
+      <div class="container mx-auto">
+        <div
+          class="grid lg:grid-cols-[2fr,1fr,1fr,1fr] sm:grid-cols-[1fr,1fr] lg:gap-x-2 sm:gap-y-3 gap-y-8 gap-x-5 grid-cols-1 py-10"
+        >
+          <div class="max-w-[400px]">
+            <div>
+              <img class="w-[210px]" src="./Resourses/logo2.png" alt="" />
+            </div>
+            <p class="py-4">
+              We’re always in search for talented and motivated people. Don’t be
+              shy introduce yourself!
+            </p>
+            <div class="max-w-[200px]">
+              <a
+                href="#"
+                class="flex border rounded-full bg-gradient-to-r from-purple-300 via-purple-500 to-blue-500 shadow-xl"
+              >
+                <div
+                  class="m-1 px-6 py-3 w-full bg-white rounded-full relative overflow-hidden text-center font-medium"
+                >
+                  Contact Us
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Useful Links</h1>
+            <div class="flex flex-col">
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Marketplace</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >kindergarten</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >University</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >GYM Coaching</a
+              >
+              <a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >FAQ</a
+              >
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Our Company</h1>
+            <div class="flex flex-col">
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Become Teacher</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Blog</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Instructor</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >GYM Events</a
+              >
+              <a
+                href="#"
+                class="w-fit hover:text-primary my-2 text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-xl mb-5">Get Contact</h1>
+            <div class="flex flex-col">
+              <div class="my-2">
+                <span>Phone: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >(406) 555-0120</a
+                >
+              </div>
+              <div class="my-2">
+                <span>E-mail: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >rainbow@example.com</a
+                >
+              </div>
+              <div class="my-2">
+                <span>Location: </span>
+                <a
+                  href="#"
+                  class="w-fit hover:text-primary text-[#192335] relative transition-all duration-300 text-base font-medium inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                  >North America, USA</a
+                >
+              </div>
+              <div class="my-2 flex gap-x-2">
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-twitter"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-instagram"></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-xl transition-all duration-300 hover:text-primary"
+                  ><i class="uil uil-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t py-4 flex items-center justify-between flex-col gap-y-3 md:flex-row"
+        >
+          <div>
+            Copyright © <span id="year"></span> Example. All Rights Reserved
+          </div>
+          <div class="flex flex-wrap justify-center">
+            <span class="px-3"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Terms of service</a
+              ></span
+            >
+            <span class="px-3 border-l border-r"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Privacy policy</a
+              ></span
+            >
+            <span class="px-3 border-l border-r"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Subscription</a
+              ></span
+            >
+            <span class="px-3"
+              ><a
+                href="#"
+                class="w-fit my-2 text-[#192335] relative transition-all duration-300 text-base font-normal inline-block after:absolute after:content-[''] after:left-auto after:bottom-0 after:bg-[#192335] hover:text-primary after:w-0 after:h-[2px] after:transition-all after:duration-300 after:right-0 hover:after:w-full hover:after:left-0 hover:after:right-auto"
+                >Login & Register</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./Js/app.js"></script>
+  </body>
+</html>
